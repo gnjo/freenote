@@ -1,4 +1,30 @@
-<head>
-</head>
+
 <body>
+  <link href="https://codepen.io/gnjo/pen/MRRLPq.css?terminal=1" rel="stylesheet"/>
+  <script src="https://gnjo.github.io/use.js"></script>
+  <script src="https://gnjo.github.io/e.js"></script>
+  <script src="https://gnjo.github.io/togist.js"></script>
+  <script src="https://gnjo.github.io/CyPk/plainList.js"></script>
+  <script src="https://gnjo.github.io/keyCmd.js"></script>
+  <script>
+
+;(function(root){
+  function entry(){
+    if(document.body.dataset.loaded)return;
+      document.body.dataset.loaded=true;
+    let el=fn.i3('<div class="modal"></div>').a2(document.body)
+    planeList(el,(e)=>{
+      let id=e.target.id
+      let base='https://gnjo.github.io/freenote.html'
+      ,p='?id='+id
+      window.open(base+p,'_blank');
+      })
+ }
+ root.init=entry;
+})(this);
+
+keyCmd(document.documentElement)
+ .ctrl({13:init})
+ .end();    
+  </script>
 </body>
