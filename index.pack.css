@@ -109,8 +109,9 @@ body {
 .test-pad {
   padding: 0 4rem;
 }
-;
-;.modal ol > li:after {
+
+/*****/
+.modal ol > li:after {
   content: attr(line) " " attr(updated);
 }
 
