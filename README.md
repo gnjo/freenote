@@ -15,9 +15,10 @@ freenote.pack.js
 freenote.pack.css
 ```
 # system
-- ```index.html```: search and create gistid. to href ```freenote.html?id=xxxxx```
-- if not id, then localStorage save. ```freenote.html```
-
+```
+"index.html": search and create gistid. to href "freenote.html?id=xxxxx"
+if not id, then localStorage save."freenote.html"
+```
 # type
 ```
 type is first line search.
