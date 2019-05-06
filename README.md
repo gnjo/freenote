@@ -3,6 +3,9 @@ all resizable gird editor
 
 # files
 ```
+//common funciton
+https://gnjo.github.io/use.js
+
 index.html
 index.pack.js
 index.pack.css
