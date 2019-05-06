@@ -3,7 +3,7 @@ all resizable gird editor
 
 # files
 ```
-//common funciton
+//common function
 https://gnjo.github.io/use.js
 
 index.html
