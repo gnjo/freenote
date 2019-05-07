@@ -38,7 +38,7 @@
     // Loop through the FileList and render image files as thumbnails.
     //readFile(files,caller);
     let url=evt.dataTransfer.getData("URL")
-    console.log(url)    
+    console.log(url,caller)
     if(url) caller(url)
   }}
   function urlReader(el,caller){
@@ -60,6 +60,7 @@
 })(this);
 
 urlReader(document.documentElement,(url)=>{
+   console.log(url)
    imgc(url).fit({w:300}).then(base64=>{
    fn.q('img').src=base64
   })
