@@ -1,0 +1,24 @@
+
+<head>
+  <style>
+    body{background-color:black;color:white;}
+    pre{border:1px solid;min-height:3rem;padding:1rem;}
+  </style>
+</head>
+<body>
+  <script src="https://gnjo.github.io/use.js"></script>
+  <script src="https://gnjo.github.io/filter.js"></script>
+  <script src="https://gnjo.github.io/imgc.js"></script>
+  <script src="https://gnjo.github.io/editable.js"></script>
+  <pre class="ed">https://i.pinimg.com/originals/47/c7/09/47c7098bc378beaba2be00f9d87bc640.jpg</pre><img/>
+  <script>
+    editable('.ed',(e)=>{
+    let url=e.target.textContent;
+    if(!(~url.indexOf('http')) )return;
+    
+    imgc(url).fit({w:300}).then(base64=>{
+     fn.q('img').src=base64
+    })
+    },300) 
+  </script>
+</body>
