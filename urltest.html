@@ -21,4 +21,47 @@
     })
     },300) 
   </script>
+  <script>
+//url reader
+;(function(root){
+  //need
+  function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+  }
+  function handleFileSelect(caller) {return function(evt){
+    evt.stopPropagation();
+    evt.preventDefault();
+    //both ondrop and input type=file
+    var files = evt.dataTransfer.files;
+    // Loop through the FileList and render image files as thumbnails.
+    //readFile(files,caller);
+    let url=evt.dataTransfer.getData("URL")
+    if(url) caller(url)
+  }}
+  function urlReader(el,caller){
+    var o={};
+    o.el=el;
+    o.caller=caller||function(ev){/**/};
+    o.el.addEventListener("dragover",handleDragOver);//
+    o.el.addEventListener("drop",handleFileSelect(o.caller));
+  }
+  root.urlReader=urlReader;
+ /*usage
+ urlReader(document.body,(url)=>{
+ console.log(f)
+ //f.name f.size ...
+ //d is base64 ...
+ 
+})
+ */
+})(this);
+
+urlReader(document.documentElement,(url)=>{
+   imgc(url).fit({w:300}).then(base64=>{
+   fn.q('img').src=base64
+  })
+})    
+  </script>
 </body>
