@@ -1,6 +1,5 @@
 # freenote
 all resizable gird editor
-https://gnjo.github.io/freenote/
 # files
 ```
 //common function
